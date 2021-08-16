@@ -12,7 +12,7 @@ import telethon.utils
 from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from Utils import RAID, RRAID
+from Utils import RAID, RRAID, BIHARI
 
 
 a = API_ID
@@ -1259,7 +1259,7 @@ async def _(event):
     async with event.client.action(event.chat_id, "typing"):
         await event.client.send_message(
             entity=event.chat_id,
-            message="""{}""".format(random.choice(RRAID)),
+            message="""{}""".format(random.choice(BIHARI)),
             reply_to=event.message.id,
         )           
             

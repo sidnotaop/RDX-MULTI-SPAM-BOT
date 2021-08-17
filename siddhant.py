@@ -12,7 +12,7 @@ import telethon.utils
 from telethon.tl import functions
 from telethon.tl.functions.channels import LeaveChannelRequest
 from telethon.tl.functions.messages import ImportChatInviteRequest
-from Utils import RAID, RRAID
+from Utils import RRAID
 
 
 a = API_ID
@@ -1197,11 +1197,11 @@ async def spam(e):
             username = f"[{c}](tg://user?id={g})"
             counter = int(yukki[0])
             for _ in range(counter):
-                reply = random.choice(RAID)
+                reply = random.choice(RRAID)
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(0.3)
+                    await asyncio.sleep(0.2)
         elif e.reply_to_msg_id:             
             a = await e.get_reply_message()
             b = await e.client.get_entity(a.sender_id)
@@ -1210,11 +1210,11 @@ async def spam(e):
             counter = int(yukki[0])
             username = f"[{c}](tg://user?id={g})"
             for _ in range(counter):
-                reply = random.choice(RAID)
+                reply = random.choice(RRAID)
                 caption = f"{username} {reply}"
                 async with e.client.action(e.chat_id, "typing"):
                     await e.client.send_message(e.chat_id, caption)
-                    await asyncio.sleep(0.3)
+                    await asyncio.sleep(0.2)
         else:
             await e.reply(usage, parse_mode=None, link_preview=None )
 
